@@ -356,7 +356,7 @@ class Shadertoy:
         self._canvas_context = self._canvas.get_context()
         # We use "bgra8unorm" not "bgra8unorm-srgb" here because we want to let the shader fully control the color-space.
         self._canvas_context.configure(
-            device=self._device, format=wgpu.TextureFormat.rgba8unorm, usage=wgpu.TextureUsage.COPY_SRC | wgpu.TextureUsage.RENDER_ATTACHMENT
+            device=self._device, format=wgpu.TextureFormat.bgra8unorm, usage=wgpu.TextureUsage.COPY_SRC | wgpu.TextureUsage.RENDER_ATTACHMENT
         )
         self.render_target = self._canvas_context
         self._bind_events()
